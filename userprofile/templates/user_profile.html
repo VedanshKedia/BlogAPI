@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+</head>
+<body>
+{{ userdata.avatar }}
+{{ userdata.username }}
+{{ userdata.emailid }}
+{{ userdata.dob }}
+{#{{ userdata }}#}
+<a href="{% url 'user_profile_edit' %}">edit your profile</a>
+</body>
+</html>
