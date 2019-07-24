@@ -17,18 +17,16 @@ from django.contrib import admin
 from django.urls import include, path
 from . import settings
 from django.conf.urls.static import static
-from django.views.generic import RedirectView
+
+from .api import router
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('blogs.urls')),
-    path('user_profile/', include('userprofile.urls')),
+    path('', include('blogs.urls')),
+    path('api/', include(router.urls)),
 ]
 
-urlpatterns += [
-    path('', RedirectView.as_view(url='user_profile/', permanent=True)),
-]
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),

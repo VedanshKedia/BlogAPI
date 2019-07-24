@@ -1,0 +1,18 @@
+{% extends 'base.html' %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Upload Blog{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form_b }}
+        <button type="submit">Update</button>
+    </form>
+    <p><a href="{% url 'blogs' %}">Blogs</a> </p>
+    <p><a href="{% url 'profile_form' %}">Update Profile</a> </p>
+{% endblock %}
+</body>
+</html>

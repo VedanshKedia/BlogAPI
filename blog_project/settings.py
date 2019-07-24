@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     
     'blogs',
 
-    'userprofile',
-
 ]
 
 MIDDLEWARE = [
@@ -62,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'userprofile/templates/')
+            os.path.join(BASE_DIR, 'blogs/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -133,3 +131,4 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

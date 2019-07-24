@@ -1,0 +1,23 @@
+{% extends 'base.html' %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Update Profile{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <img style="max-width: 100px" class="rounded-circle img-rounded account-img img-circle" src="{{ user.custom.avatar.url }}"><br>
+
+    {{ user.custom.avatar.url }}
+
+    <form method="post" action="{% url 'profile_form' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ p_form.as_table}}<br>
+        {{ u_form.as_table }}
+        <button type="submit">Update</button>
+    </form>
+    <p><a href="{% url 'blogs' %}">Blogs</a> </p>
+    <p><a href="{% url 'blog_form' %}">Upload a new Blog</a> </p>
+{% endblock %}
+</body>
+</html>
